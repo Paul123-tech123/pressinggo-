@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Pressing Express | Collecte & Livraison à Cotonou</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Icônes -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f6fb;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* HERO */
+header {
+  background: linear-gradient(135deg, #0a5cff, #003bb3);
+  color: white;
+  padding: 70px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.6rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.15rem;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+.btn {
+  background: #25d366;
+  color: white;
+  padding: 16px 34px;
+  font-size: 1.05rem;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.25s ease;
+}
+
+.btn i {
+  margin-right: 8px;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* SECTIONS */
+section {
+  background: white;
+  max-width: 1000px;
+  margin: 35px auto;
+  padding: 45px 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+h2 {
+  color: #0a5cff;
+  margin-bottom: 18px;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* FEATURES */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.feature {
+  text-align: center;
+}
+
+.feature i {
+  font-size: 40px;
+  color: #0a5cff;
+  margin-bottom: 15px;
+}
+
+/* STEPS */
+.steps li {
+  list-style: none;
+  margin-bottom: 12px;
+  padding-left: 30px;
+  position: relative;
+}
+
+.steps li::before {
+  content: "✔";
+  color: #25d366;
+  position: absolute;
+  left: 0;
+}
+
+/* PRICING */
+.pricing {
+  background: #eef2ff;
+}
+
+.price {
+  font-size: 2.3rem;
+  font-weight: bold;
+  color: #0a5cff;
+  margin: 10px 0;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px 15px;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="Go+.png" alt="Pressing Go+" style="width:120px; margin-bottom:15px;">
+  <h1>Pressing Go+</h1>
+  <p>
+    Collecte & livraison rapide de vos vêtements<br>
+    vers le pressing de votre choix ou de confiance partout à Cotonou.
+  </p>
+
+  <a class="btn" target="_blank"
+     href="https://wa.me/22954454665?text=Bonjour%20Pressing%20Express,%20je%20souhaite%20un%20service%20de%20collecte%20et%20livraison.%0ANom%20:%0AAdresse%20:%0APressing%20choisi%20:%0A">
+    <i class="fab fa-whatsapp"></i> Commander sur WhatsApp
+  </a>
+</header>
+
+<section>
+  <h2>Pourquoi choisir Pressing Go+ ?</h2>
+
+  <div class="features">
+    <div class="feature">
+      <i class="fas fa-truck"></i>
+      <h3>Collecte rapide</h3>
+      <p>À domicile ou au bureau</p>
+    </div>
+
+    <div class="feature">
+      <i class="fas fa-shirt"></i>
+      <h3>Votre pressing habituel</h3>
+      <p>Nous respectons votre choix</p>
+    </div>
+
+    <div class="feature">
+      <i class="fas fa-clock"></i>
+      <h3>Gain de temps</h3>
+      <p>Plus de déplacements inutiles</p>
+    </div>
+
+    <div class="feature">
+      <i class="fas fa-star"></i>
+      <h3>Service premium</h3>
+      <p>Fiable, rapide et sécurisé</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Comment ça marche ?</h2>
+
+  <ul class="steps">
+    <li>Vous nous contactez sur WhatsApp</li>
+    <li>Nous récupérons vos vêtements</li>
+    <li>Nous les déposons au pressing choisi</li>
+    <li>Après lavage, nous vous livrons(livraison finale)</li>
+  </ul>
+</section>
+
+<section class="pricing">
+  <h2>Tarification simple & claire</h2>
+  <div class="price" style="text-align:center;">8.000 FCFA</div>
+  <p style="text-align:center;">Collecte + Livraison (Jusqu'à la livraison finale) par commande</p>
+  <p style="text-align:center;"><strong>Abonnements disponibles</strong> pour clients réguliers</p><br>
+  <p style="text-align:center;">Abonnements hebdomadaires, bi-hebdomadaires et VIP disponibles. Contactez-nous sur WhatsApp pour en savoir plus et personnaliser votre formule !</p>
+</section>
+
+<section>
+  <h2>Contact immédiat</h2>
+  <p style="text-align:center;">Un message et on s’occupe du reste 👌</p>
+
+  <div style="text-align:center; margin-top:15px;">
+    <a class="btn" target="_blank" href="https://wa.me/22954454665">
+      <i class="fab fa-whatsapp"></i> Discuter sur WhatsApp
+    </a>
+  </div>
+</section>
+
+
+<footer>
+  © 2026 Pressing Go+ — Logistique premium
+</footer>
+
+</body>
+</html>
