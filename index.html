@@ -156,12 +156,70 @@ footer {
     vers le pressing de votre choix partout à Cotonou.
   </p>
 
-  <a class="btn" target="_blank"
-href="https://wa.me/22954454665?text=Bonjour%20Pressing%20Go%2B,%20je%20souhaite%20un%20service%20de%20collecte%20et%20livraison.%0A%0ANom%20:%20%0AAdresse%20:%20%0APressing%20choisi%20:%20%0AType%20de%20service%20(PG+A,%20PG+B,%20PG+C)%20:"
-
-  <i class="fab fa-whatsapp"></i> Commander sur WhatsApp
-  </a>
+  <button onclick="openForm()" class="btn">
+    <i class="fab fa-whatsapp"></i> Commander maintenant
+  </button>
 </header>
+
+<!-- FORMULAIRE -->
+<section id="orderForm" style="display:none;">
+  <h2>Passez votre commande</h2>
+
+  <input id="clientName" type="text" placeholder="Votre Nom"
+  style="width:100%;padding:12px;margin-bottom:10px;border-radius:8px;border:1px solid #ccc;">
+
+  <input id="clientPhone" type="text" placeholder="Votre Numéro"
+  style="width:100%;padding:12px;margin-bottom:10px;border-radius:8px;border:1px solid #ccc;">
+
+  <!-- Quartier Cotonou -->
+  <select id="clientAddress"
+  style="width:100%;padding:12px;margin-bottom:10px;border-radius:8px;border:1px solid #ccc;">
+    <option value="">Choisir votre quartier à Cotonou</option>
+    <option>Akpakpa</option>
+    <option>Cadjèhoun</option>
+    <option>Fidjrossè</option>
+    <option>Agla</option>
+    <option>Gbégamey</option>
+    <option>Haie Vive</option>
+    <option>Houéyiho</option>
+    <option>Ste Rita</option>
+    <option>Vèdoko</option>
+    <option>Zogbo</option>
+  </select>
+  <input id="location" type="text" placeholder="Localisation"
+   class="border p-2 w-full mb-3 rounded">
+  <button onclick="getLocation()" class="bg-blue-500 text-white px-4 py-2 rounded w-full mb-3">
+   Utiliser ma position GPS
+  </button>
+
+  
+  <!-- Service -->
+  <select id="serviceName"
+  style="width:100%;padding:12px;margin-bottom:10px;border-radius:8px;border:1px solid #ccc;">
+    <option value="">Choisir le service</option>
+    <option value="PG+A">PG+A</option>
+    <option value="PG+B">PG+B</option>
+    <option value="PG+C">PG+C</option>
+  </select>
+
+  <!-- Affichage prix automatique -->
+  <div id="servicePrice"
+  style="text-align:center;font-weight:bold;color:#0a5cff;margin-bottom:10px;"></div>
+
+  <input id="pressingName" type="text" placeholder="Nom du pressing choisi"
+  style="width:100%;padding:12px;margin-bottom:10px;border-radius:8px;border:1px solid #ccc;">
+
+  <input id="pressingAddress" type="text" placeholder="Adresse du pressing"
+  style="width:100%;padding:12px;margin-bottom:10px;border-radius:8px;border:1px solid #ccc;">
+
+  <input id="pressingPhone" type="text" placeholder="Numéro du pressing (optionnel)"
+  style="width:100%;padding:12px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
+
+  <button id="sendBtn" disabled
+  style="background:gray;color:white;padding:15px;width:100%;border:none;border-radius:30px;font-size:16px;">
+  Commander sur WhatsApp
+  </button>
+</section>
 
 <section>
   <h2>Pourquoi choisir Pressing Go+ ?</h2>
@@ -227,7 +285,7 @@ href="https://wa.me/22954454665?text=Bonjour%20Pressing%20Go%2B,%20je%20souhaite
     Nous nous occupons de tout : récupération de vos vêtements,
     dépôt au pressing de votre choix, livraison de la facture,
     puis récupération et livraison finale de vos vêtements.
-    <br><strong>Objectif :</strong> Gestion complète de la logistique de A à Z, sans que vous ayez à vous déplacer.
+    <br><strong>Objectif :</strong> Gestion complète de la logistique de A à Z.
   </p>
 
   <h2>Tarification simple & claire</h2>
@@ -237,7 +295,7 @@ href="https://wa.me/22954454665?text=Bonjour%20Pressing%20Go%2B,%20je%20souhaite
   <div class="price" style="text-align:center;">PG+C : 6 000 FCFA</div>
 
   <p style="text-align:center;"><strong>Abonnements disponibles pour le service PG+C</strong></p>
-  <p style="text-align:center;">Contactez-nous sur WhatsApp pour en savoir plus sur les abonnements.</p>
+  <p style="text-align:center;">Contactez-nous sur WhatsApp pour en savoir plus.</p>
 </section>
 
 <section>
@@ -255,6 +313,96 @@ href="https://wa.me/22954454665?text=Bonjour%20Pressing%20Go%2B,%20je%20souhaite
   © 2026 Pressing Go+ — Logistique premium
 </footer>
 
-</body>
-</html>
+<script>
+const providerNumber = "22954454665";
+const sendBtn = document.getElementById("sendBtn");
+const priceDisplay = document.getElementById("servicePrice");
 
+const prices = {
+  "PG+A": "3 500 FCFA",
+  "PG+B": "3 500 FCFA",
+  "PG+C": "6 000 FCFA"
+};
+
+let gpsLink = ""; // <-- nouveau
+
+function openForm(){
+  document.getElementById("orderForm").style.display = "block";
+  window.scrollTo(0, document.body.scrollHeight);
+}
+
+document.querySelectorAll("#clientName,#clientPhone,#clientAddress,#pressingName,#pressingAddress,#serviceName")
+.forEach(input=>{
+  input.addEventListener("input", validateForm);
+  input.addEventListener("change", validateForm);
+});
+
+function validateForm(){
+  const name = clientName.value.trim();
+  const phone = clientPhone.value.trim();
+  const address = clientAddress.value.trim();
+  const pressingNameVal = pressingName.value.trim();
+  const pressingAddressVal = pressingAddress.value.trim();
+  const serviceVal = serviceName.value.trim();
+
+  // Affichage automatique du prix
+  if(prices[serviceVal]){
+    priceDisplay.innerHTML = "Prix du service : " + prices[serviceVal];
+  } else {
+    priceDisplay.innerHTML = "";
+  }
+
+  if(name && phone && address && pressingNameVal && pressingAddressVal && serviceVal){
+    sendBtn.disabled = false;
+    sendBtn.style.background = "#25d366";
+    sendBtn.onclick = sendWhatsApp;
+  } else {
+    sendBtn.disabled = true;
+    sendBtn.style.background = "gray";
+  }
+}
+
+function getLocation(){
+  if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(
+      position=>{
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+
+        gpsLink = "https://www.google.com/maps?q=" + lat + "," + lon;
+
+        document.getElementById("location").value = "Position GPS enregistrée ✔";
+      },
+      error=>{
+        alert("Impossible d'obtenir la position GPS.");
+      }
+    );
+  } else {
+    alert("La géolocalisation n'est pas supportée par ce navigateur.");
+  }
+}
+
+function sendWhatsApp(){
+  const message = `
+Nouvelle commande Pressing Go+
+
+Type de service: ${serviceName.value}
+Prix: ${prices[serviceName.value]}
+
+CLIENT
+Nom: ${clientName.value}
+Téléphone: ${clientPhone.value}
+Quartier: ${clientAddress.value}
+Localisation Google Maps: ${gpsLink ? gpsLink : "Non fournie"}
+
+PRESSING CHOISI
+Nom: ${pressingName.value}
+Adresse: ${pressingAddress.value}
+Téléphone: ${pressingPhone.value}
+`;
+
+  const url = `https://wa.me/${providerNumber}?text=${encodeURIComponent(message)}`;
+  window.open(url,"_blank");
+}
+</script>
+</body>
