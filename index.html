@@ -2,521 +2,405 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Pressing Express | Collecte & Livraison à Cotonou</title>
+<title>ServiceGO+ | Trouvez un prestataire fiable à Cotonou</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Icônes -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Segoe UI,Arial;
+background:#f4f6fb;
+color:#333;
+line-height:1.6
 }
 
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: #f4f6fb;
-  color: #333;
-  line-height: 1.6;
+header{
+background:linear-gradient(135deg,#0a5cff,#003bb3);
+color:white;
+padding:70px 20px;
+text-align:center
 }
 
-/* HERO */
-header {
-  background: linear-gradient(135deg, #0a5cff, #003bb3);
-  color: white;
-  padding: 70px 20px;
-  text-align: center;
+header h1{
+font-size:2.6rem;
+margin-bottom:10px
 }
 
-header h1 {
-  font-size: 2.6rem;
-  margin-bottom: 10px;
+header p{
+opacity:.95;
+margin-bottom:30px
 }
 
-header p {
-  font-size: 1.15rem;
-  margin-bottom: 30px;
-  opacity: 0.95;
+.btn{
+background:#25d366;
+color:white;
+padding:15px 30px;
+border-radius:40px;
+text-decoration:none;
+display:inline-block;
+font-weight:bold;
+transition:.25s
 }
 
-.btn {
-  background: #25d366;
-  color: white;
-  padding: 16px 34px;
-  font-size: 1.05rem;
-  border-radius: 50px;
-  text-decoration: none;
-  display: inline-block;
-  transition: 0.25s ease;
+.btn:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 20px rgba(0,0,0,.2)
 }
 
-.btn i {
-  margin-right: 8px;
+section{
+background:white;
+max-width:1000px;
+margin:35px auto;
+padding:45px 25px;
+border-radius:16px;
+box-shadow:0 10px 30px rgba(0,0,0,.06)
 }
 
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+h2{
+color:#0a5cff;
+text-align:center;
+margin-bottom:20px
 }
 
-/* SECTIONS */
-section {
-  background: white;
-  max-width: 1000px;
-  margin: 35px auto;
-  padding: 45px 25px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px
 }
 
-h2 {
-  color: #0a5cff;
-  margin-bottom: 18px;
-  font-size: 1.8rem;
-  text-align: center;
+.feature{
+text-align:center
 }
 
-p {
-  margin-bottom: 15px;
-  font-size: 1rem;
-  text-align: center;
+.feature i{
+font-size:40px;
+color:#0a5cff;
+margin-bottom:10px
 }
 
-/* FEATURES */
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  margin-top: 25px;
+input,select,textarea{
+width:100%;
+padding:12px;
+margin-bottom:10px;
+border-radius:8px;
+border:1px solid #ccc
 }
 
-.feature {
-  text-align: center;
+button{
+background:#25d366;
+color:white;
+border:none;
+padding:15px;
+width:100%;
+border-radius:30px;
+font-size:16px;
+cursor:pointer
 }
 
-.feature i {
-  font-size: 40px;
-  color: #0a5cff;
-  margin-bottom: 15px;
+footer{
+text-align:center;
+padding:30px;
+color:#777
 }
 
-/* STEPS */
-.steps li {
-  list-style: none;
-  margin-bottom: 12px;
-  padding-left: 30px;
-  position: relative;
+.warning{
+background:#fff4e5;
+border-left:5px solid orange;
+padding:15px;
+margin-top:20px
 }
 
-.steps li::before {
-  content: "✔";
-  color: #25d366;
-  position: absolute;
-  left: 0;
-}
-
-/* PRICING */
-.pricing {
-  background: #eef2ff;
-}
-
-.price {
-  font-size: 2.3rem;
-  font-weight: bold;
-  color: #0a5cff;
-  margin: 10px 0;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 30px 15px;
-  font-size: 0.9rem;
-  color: #777;
-}
-
-/* RESPONSIVE */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 2rem;
-  }
-}
 </style>
 </head>
 
 <body>
 
 <header>
-  <img src="Go+.png" alt="Pressing Go+" style="width:120px; margin-bottom:15px;">
-  <h1>Pressing Go+</h1>
-  <p>
-    Collecte & livraison rapide de vos vêtements<br>
-    vers le pressing de votre choix partout à Cotonou.
-  </p>
 
-  <button onclick="openForm()" class="btn">
-    <i class="fab fa-whatsapp"></i> Profiter de la collecte gratuite
-  </button>
-  <p style="background:#ffd700;color:#000;padding:10px 18px;border-radius:30px;display:inline-block;font-weight:bold;margin-bottom:20px;">
-🎉 Offre de lancement : 1ère collecte gratuite partout à Cotonou
+<h1>ServiceGO+</h1>
+
+<p>
+Plateforme gratuite qui vous met en relation avec des prestataires fiables partout à Cotonou. <br/>
+Trouvez rapidement un prestataire de confiance à Cotonou, sans frais, sans stress et sans anarque, grâce à ServiceGO+.
 </p>
+
+<a class="btn" onclick="openForm()">
+<i class="fab fa-whatsapp"></i>
+Trouver un prestataire maintenant
+</a>
+
+<p style="margin-top:20px;background:#ffd700;color:black;padding:10px 20px;border-radius:25px;display:inline-block">
+Service gratuit • Aucun engagement
+</p>
+
 </header>
 
-<section style="background:#fff8e6;border:2px dashed #ffd700;">
-  <h2>Offre découverte Pressing Go+</h2>
+<section>
 
-  <p style="font-size:1.1rem;">
-  Pour le lancement de Pressing Go+ à Cotonou, nous offrons
-  <strong>la première collecte gratuite</strong> aux nouveaux clients.
-  </p>
+<h2>Services disponibles</h2>
 
-  <p>
-  Essayez notre service sans risque et découvrez la simplicité
-  de faire gérer votre pressing sans vous déplacer.
-  </p>
+<div class="features">
 
-  <div class="features" style="margin-top:25px;">
+<div class="feature">
+<i class="fas fa-wrench"></i>
+<h3>Plombier</h3>
+</div>
 
-    <div class="feature">
-      <i class="fas fa-gift"></i>
-      <h3>1ère collecte offerte</h3>
-      <p>Découvrez le service gratuitement</p>
-    </div>
+<div class="feature">
+<i class="fas fa-bolt"></i>
+<h3>Électricien</h3>
+</div>
 
-    <div class="feature">
-      <i class="fas fa-clock"></i>
-      <h3>Gain de temps</h3>
-      <p>Plus besoin d'aller au pressing</p>
-    </div>
+<div class="feature">
+<i class="fas fa-car"></i>
+<h3>Mécanicien</h3>
+</div>
 
-    <div class="feature">
-      <i class="fas fa-star"></i>
-      <h3>Sans engagement</h3>
-      <p>Essayez simplement le service</p>
-    </div>
+<div class="feature">
+<i class="fas fa-mobile-screen"></i>
+<h3>Réparateur téléphone</h3>
+</div>
 
-  </div>
+<div class="feature">
+<i class="fas fa-laptop"></i>
+<h3>Réparateur ordinateur</h3>
+</div>
 
-  <p style="margin-top:25px;font-weight:bold;">
-  ⚠ Offre limitée aux nouveaux clients et pour une durée limitée.
-  </p>
+<div class="feature">
+<i class="fas fa-fan"></i>
+<h3>Climatisation</h3>
+</div>
+
+<div class="feature">
+<i class="fas fa-hammer"></i>
+<h3>Menuisier</h3>
+</div>
+
+<div class="feature">
+<i class="fas fa-broom"></i>
+<h3>Femme de ménage</h3>
+</div>
+
+<div class="feature">
+<i class="fas fa-truck"></i>
+<h3>Déménagement</h3>
+</div>
+
+<div class="feature">
+<i class="fas fa-sim-card"></i>
+<h3>Service Moov Africa</h3>
+</div>
+
+</div>
+
 </section>
 
-<!-- FORMULAIRE -->
-<section id="orderForm" style="display:none;">
-  <h2>Passez votre commande</h2>
+<section id="orderForm" style="display:none">
 
-  <input id="clientName" type="text" placeholder="Votre Nom"
-  style="width:100%;padding:12px;margin-bottom:10px;border-radius:8px;border:1px solid #ccc;">
+<h2>Demande de prestataire</h2>
 
-  <input id="clientPhone" type="text" placeholder="Votre Numéro"
-  style="width:100%;padding:12px;margin-bottom:10px;border-radius:8px;border:1px solid #ccc;">
+<input id="clientName" placeholder="Votre nom">
 
-  <!-- Quartier Cotonou -->
-  <select id="clientAddress"
-  style="width:100%;padding:12px;margin-bottom:10px;border-radius:8px;border:1px solid #ccc;">
-    <option value="">Choisir votre quartier à Cotonou</option>
-    <option>Akpakpa</option>
-    <option>Cadjèhoun</option>
-    <option>Fidjrossè</option>
-    <option>Agla</option>
-    <option>Gbégamey</option>
-    <option>Haie Vive</option>
-    <option>Houéyiho</option>
-    <option>Ste Rita</option>
-    <option>Vèdoko</option>
-    <option>Zogbo</option>
+<input id="clientPhone" placeholder="Votre numéro">
+
+<select id="serviceType">
+
+<option value="">Choisir le service</option>
+<option>Plomberie</option>
+<option>Électricité</option>
+<option>Mécanique</option>
+<option>Réparation téléphone</option>
+<option>Réparation ordinateur</option>
+<option>Climatisation</option>
+<option>Menuiserie</option>
+<option>Femme de ménage</option>
+<option>Déménagement</option>
+<option>Service MOOV AFRICA</option>
+
+</select>
+
+<select id="clientArea">
+
+<option value="">Votre quartier</option>
+<option>Akpakpa</option>
+<option>Fidjrossè</option>
+<option>Cadjèhoun</option>
+<option>Agla</option>
+<option>Haie Vive</option>
+<option>Gbégamey</option>
+<option>Vèdoko</option>
+
+</select>
+
+<textarea id="problem"
+placeholder="Décrivez le problème ou service demandé"></textarea>
+
+<input id="location" placeholder="Localisation GPS">
+
+<button onclick="getLocation()">Utiliser ma position GPS</button>
+
+<div class="warning">
+
+Pour votre sécurité et la qualité du service :
+
+• Les coordonnées des prestataires ne sont jamais communiquées directement.  
+• Toutes les demandes passent par ServiceGO+.  
+• Cela garantit suivi, assistance et possibilité de notation.
+
+</div>
+
+<div class="warning">
+
+<i class="fas fa-lock"></i> Vos informations restent confidentielles.  
+<i class="fas fa-check-circle"></i> Seule l’équipe ServiceGO+ traite votre demande.  
+<i class="fas fa-headset"></i> Assistance disponible en cas de problème.
+
+</div>
+
+<button onclick="sendWhatsApp()">Envoyer la demande sur WhatsApp</button>
+
+<p style="margin-top:15px;font-size:14px;opacity:0.9">
+<i class="fas fa-shield-halved"></i> Plateforme sécurisée • 
+<i class="fas fa-user-check"></i> Prestataires vérifiés • 
+<i class="fas fa-star"></i> Système de notation client
+</p>
+
+</section>
+
+<section>
+
+<h2>Comment ça marche ?</h2>
+
+<p style="text-align:center">
+
+1️⃣ Vous envoyez votre demande  
+2️⃣ ServiceGO+ trouve un prestataire disponible  
+3️⃣ Le prestataire intervient chez vous  
+4️⃣ Vous pouvez ensuite laisser une note
+
+</p>
+
+</section>
+
+<!-- Bouton visible pour afficher le formulaire d'avis -->
+<section>
+  <h2>Donner votre avis</h2>
+  <div style="text-align:center">
+    <button onclick="openRating()" style="max-width:300px;margin:auto">
+      Noter un prestataire
+    </button>
+  </div>
+</section>
+
+<!-- Formulaire caché au départ -->
+<section id="ratingSection" style="display:none">
+  <h2>Noter un prestataire</h2>
+
+  <input id="ratingName" placeholder="Votre nom">
+  <input id="ratingPhone" placeholder="Votre numéro">
+
+  <select id="serviceRated">
+    <option value="">Type de service</option>
+    <option>Plombier</option>
+    <option>Électricien</option>
+    <option>Mécanicien</option>
+    <option>Réparation téléphone</option>
+    <option>Réparation ordinateur</option>
+    <option>Climatisation</option>
+    <option>Menuiserie</option>
+    <option>Femme de ménage</option>
+    <option>Déménagement</option>
   </select>
-  <input id="location" type="text" placeholder="Localisation"
-   class="border p-2 w-full mb-3 rounded">
-  <button onclick="getLocation()" class="bg-blue-500 text-white px-4 py-2 rounded w-full mb-3">
-   Utiliser ma position GPS
-  </button>
 
-  
-  <!-- Service -->
-  <select id="serviceName"
-  style="width:100%;padding:12px;margin-bottom:10px;border-radius:8px;border:1px solid #ccc;">
-    <option value="">Choisir le service</option>
-    <option value="PG+A">PG+A</option>
-    <option value="PG+B">PG+B</option>
-    <option value="PG+C">PG+C</option>
+  <select id="ratingScore">
+    <option value="">Note</option>
+    <option>⭐⭐⭐⭐⭐ Excellent</option>
+    <option>⭐⭐⭐⭐ Bon</option>
+    <option>⭐⭐⭐ Moyen</option>
+    <option>⭐⭐ Mauvais</option>
+    <option>⭐ Très mauvais</option>
   </select>
 
-  <!-- Affichage prix automatique -->
-  <div id="servicePrice"
-  style="text-align:center;font-weight:bold;color:#0a5cff;margin-bottom:10px;"></div>
+  <textarea id="ratingDetails" placeholder="Expliquez votre expérience avec ce prestataire"></textarea>
 
-  <input id="pressingName" type="text" placeholder="Nom du pressing choisi"
-  style="width:100%;padding:12px;margin-bottom:10px;border-radius:8px;border:1px solid #ccc;">
-
-  <input id="pressingAddress" type="text" placeholder="Adresse du pressing"
-  style="width:100%;padding:12px;margin-bottom:10px;border-radius:8px;border:1px solid #ccc;">
-
-  <input id="pressingPhone" type="text" placeholder="Numéro du pressing (optionnel)"
-  style="width:100%;padding:12px;margin-bottom:15px;border-radius:8px;border:1px solid #ccc;">
-
-  <button id="sendBtn" disabled
-  style="background:gray;color:white;padding:15px;width:100%;border:none;border-radius:30px;font-size:16px;">
-  Commander sur WhatsApp
-  </button>
-</section>
-
-<section>
-  <h2>Pourquoi choisir Pressing Go+ ?</h2>
-
-  <div class="features">
-    <div class="feature">
-      <i class="fas fa-truck"></i>
-      <h3>Collecte rapide</h3>
-      <p>À domicile ou au bureau</p>
-    </div>
-
-    <div class="feature">
-      <i class="fas fa-shirt"></i>
-      <h3>Votre pressing habituel</h3>
-      <p>Nous respectons votre choix</p>
-    </div>
-
-    <div class="feature">
-      <i class="fas fa-clock"></i>
-      <h3>Gain de temps</h3>
-      <p>Plus de déplacements inutiles</p>
-    </div>
-
-    <div class="feature">
-      <i class="fas fa-star"></i>
-      <h3>Service premium</h3>
-      <p>Fiable, rapide et sécurisé</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>Comment ça marche ?</h2>
-
-  <ul class="steps">
-    <li>Vous nous contactez sur WhatsApp</li>
-    <li>Nous récupérons vos vêtements</li>
-    <li>Nous les déposons au pressing choisi</li>
-    <li>Après lavage, nous vous les livrons</li>
-  </ul>
-</section>
-
-<section class="pricing">
-  <h2>Types de services</h2>
-
-  <h3 style="text-align:center;">PG+A</h3>
-  <p>
-    Vous nous contactez sur WhatsApp. Nous récupérons vos vêtements à domicile ou au bureau,
-    nous les déposons au pressing de votre choix et nous vous livrons la facture.
-    <br><strong>Objectif :</strong> Vous éviter le déplacement pour déposer vos vêtements.
-  </p>
-
-  <h3 style="text-align:center;">PG+B</h3>
-  <p>
-    Vous nous contactez pour récupérer vos vêtements prêts au pressing.
-    Nous collectons chez vous la facture ainsi que les frais de règlement,
-    puis nous allons récupérer vos vêtements et vous les livrons à domicile ou au bureau.
-    <br><strong>Objectif :</strong> Vous éviter le déplacement pour récupérer vos vêtements.
-  </p>
-
-  <h3 style="text-align:center;">PG+C</h3>
-  <p>
-    Nous nous occupons de tout : récupération de vos vêtements,
-    dépôt au pressing de votre choix, livraison de la facture,
-    puis récupération et livraison finale de vos vêtements.
-    <br><strong>Objectif :</strong> Gestion complète de la logistique de A à Z.
-  </p>
-
-  <h2>Tarification simple & claire</h2>
-
-  <div class="price" style="text-align:center;">PG+A : 3 500 FCFA</div>
-  <div class="price" style="text-align:center;">PG+B : 3 500 FCFA</div>
-  <div class="price" style="text-align:center;">PG+C : 6 000 FCFA</div>
-
-  <p style="text-align:center;"><strong>Abonnements disponibles pour le service PG+C</strong></p>
-  <p style="text-align:center;">Contactez-nous sur WhatsApp pour en savoir plus.</p>
-</section>
- 
-<section>
-  <h2>Ils nous font déjà confiance</h2>
-
-  <p style="max-width:700px;margin:auto;">
-  Chaque semaine, des clients à Cotonou utilisent Pressing Go+ pour gagner du temps
-  et éviter les déplacements au pressing.  
-  Notre priorité : un service fiable, ponctuel et sécurisé.
-  </p>
-
-  <div class="features" style="margin-top:35px;">
-
-    <div class="feature">
-      <i class="fas fa-users"></i>
-      <h3>+100 clients satisfaits</h3>
-      <p>Des particuliers et professionnels à Cotonou</p>
-    </div>
-
-    <div class="feature">
-      <i class="fas fa-truck-fast"></i>
-      <h3>Collecte fiable</h3>
-      <p>Respect des horaires et suivi des commandes</p>
-    </div>
-
-    <div class="feature">
-      <i class="fas fa-shield-alt"></i>
-      <h3>Service sécurisé</h3>
-      <p>Vos vêtements sont manipulés avec soin</p>
-    </div>
-
-  </div>
-</section>
-
-
-<section style="background:#f8faff;">
-  <h2>Ce que disent nos clients</h2>
-
-  <div class="features">
-
-    <div class="feature" style="background:white;padding:20px;border-radius:12px;">
-      <p>
-      “Service très pratique. Je n'ai plus besoin de traverser Cotonou
-      pour déposer mes vêtements au pressing.”
-      </p>
-      <strong>— Arnaud K., Cadjèhoun</strong>
-    </div>
-
-    <div class="feature" style="background:white;padding:20px;border-radius:12px;">
-      <p>
-      “Le livreur est ponctuel et professionnel.
-      Franchement ça me fait gagner énormément de temps.”
-      </p>
-      <strong>— Mireille A., Fidjrossè</strong>
-    </div>
-
-    <div class="feature" style="background:white;padding:20px;border-radius:12px;">
-      <p>
-      “Très bon concept. Ils déposent au pressing que je choisis
-      et me ramènent mes vêtements.”
-      </p>
-      <strong>— Stéphane D., Haie Vive</strong>
-    </div>
-
-  </div>
-
-  <p style="margin-top:30px;font-size:1.05rem;">
-  ✔ Service local basé à Cotonou  
-  ✔ Assistance rapide sur WhatsApp  
-  ✔ Satisfaction client au cœur de notre service
-  </p>
-</section>
-
-<section>
-  <h2>Contact immédiat</h2>
-  <p style="text-align:center;">Un message et on s’occupe du reste 👌</p>
-
-  <div style="text-align:center; margin-top:15px;">
-    <a class="btn" target="_blank" href="https://wa.me/22954454665">
-      <i class="fab fa-whatsapp"></i> Discuter sur WhatsApp
-    </a>
-  </div>
+  <button onclick="sendRating()">Envoyer l'avis via WhatsApp</button>
 </section>
 
 <footer>
-  © 2026 Pressing Go+ — Logistique premium
+
+© 2026 ServiceGO+  
+Plateforme gratuite de mise en relation
+
 </footer>
 
 <script>
-const providerNumber = "22954454665";
-const sendBtn = document.getElementById("sendBtn");
-const priceDisplay = document.getElementById("servicePrice");
 
-const prices = {
-  "PG+A": "3 500 FCFA",
-  "PG+B": "3 500 FCFA",
-  "PG+C": "6 000 FCFA"
-};
-
-let gpsLink = ""; // <-- nouveau
+const providerNumber="22954454665"
+let gpsLink=""
 
 function openForm(){
-  document.getElementById("orderForm").style.display = "block";
-  window.scrollTo(0, document.body.scrollHeight);
+  document.getElementById("orderForm").style.display="block"
+  window.scrollTo(0,document.body.scrollHeight)
 }
 
-document.querySelectorAll("#clientName,#clientPhone,#clientAddress,#pressingName,#pressingAddress,#serviceName")
-.forEach(input=>{
-  input.addEventListener("input", validateForm);
-  input.addEventListener("change", validateForm);
-});
-
-function validateForm(){
-  const name = clientName.value.trim();
-  const phone = clientPhone.value.trim();
-  const address = clientAddress.value.trim();
-  const pressingNameVal = pressingName.value.trim();
-  const pressingAddressVal = pressingAddress.value.trim();
-  const serviceVal = serviceName.value.trim();
-
-  // Affichage automatique du prix
-  if(prices[serviceVal]){
-    priceDisplay.innerHTML = "Prix du service : " + prices[serviceVal];
-  } else {
-    priceDisplay.innerHTML = "";
-  }
-
-  if(name && phone && address && pressingNameVal && pressingAddressVal && serviceVal){
-    sendBtn.disabled = false;
-    sendBtn.style.background = "#25d366";
-    sendBtn.onclick = sendWhatsApp;
-  } else {
-    sendBtn.disabled = true;
-    sendBtn.style.background = "gray";
-  }
+function openRating(){
+  document.getElementById("ratingSection").style.display="block"
+  window.scrollTo(0,document.body.scrollHeight)
 }
 
 function getLocation(){
   if(navigator.geolocation){
-    navigator.geolocation.getCurrentPosition(
-      position=>{
-        const lat = position.coords.latitude;
-        const lon = position.coords.longitude;
-
-        gpsLink = "https://www.google.com/maps?q=" + lat + "," + lon;
-
-        document.getElementById("location").value = "Position GPS enregistrée ✔";
-      },
-      error=>{
-        alert("Impossible d'obtenir la position GPS.");
-      }
-    );
-  } else {
-    alert("La géolocalisation n'est pas supportée par ce navigateur.");
+    navigator.geolocation.getCurrentPosition(position=>{
+      const lat=position.coords.latitude
+      const lon=position.coords.longitude
+      gpsLink="https://www.google.com/maps?q="+lat+","+lon
+      document.getElementById("location").value="Position GPS enregistrée ✔"
+    })
   }
 }
 
 function sendWhatsApp(){
-  const message = `
-Nouvelle commande Pressing Go+
+  const message=
+`Nouvelle demande GoService+
 
-Type de service: ${serviceName.value}
-Prix: ${prices[serviceName.value]}
+Client : ${clientName.value}
+Téléphone : ${clientPhone.value}
 
-CLIENT
-Nom: ${clientName.value}
-Téléphone: ${clientPhone.value}
-Quartier: ${clientAddress.value}
-Localisation Google Maps: ${gpsLink ? gpsLink : "Non fournie"}
+Service demandé : ${serviceType.value}
 
-PRESSING CHOISI
-Nom: ${pressingName.value}
-Adresse: ${pressingAddress.value}
-Téléphone: ${pressingPhone.value}
-`;
+Quartier : ${clientArea.value}
 
-  const url = `https://wa.me/${providerNumber}?text=${encodeURIComponent(message)}`;
-  window.open(url,"_blank");
+Problème : ${problem.value}
+
+Localisation :
+${gpsLink}
+
+Après l'envoi de ce message, merci d'envoyer un message vocal décrivant votre quartier exact et votre problème afin d'aider ServiceGO+ à trouver le plus prestataire le fiable.`
+  const url=`https://wa.me/${providerNumber}?text=${encodeURIComponent(message)}`
+  window.open(url,"_blank")
 }
+
+function sendRating(){
+  const message=
+`Avis client ServiceGO+
+
+Nom : ${ratingName.value}
+Téléphone : ${ratingPhone.value}
+
+Service : ${serviceRated.value}
+Note : ${ratingScore.value}
+
+Détails :
+${ratingDetails.value}`
+  const url=`https://wa.me/${providerNumber}?text=${encodeURIComponent(message)}`
+  window.open(url,"_blank")
+}
+
 </script>
+
 </body>
+</html>
